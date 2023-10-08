@@ -1,13 +1,21 @@
 <?php
 
-if (isset($_GET['total_vendido']) && isset($_GET['cant_hijos']) && isset($_GET['sueldo_basico'])) {
+$cant_gaseosa = isset($_GET['cant_gaseosa']) ? intval($_GET['cant_gaseosa']) : 0;
+$precio_gaseosa = isset($_GET['precio_gaseosa']) ? floatval($_GET['precio_gaseosa']) : 0;
 
-    $total_vendido = floatval($_GET['total_vendido']);
-    $cant_hijos = intval($_GET['cant_hijos']);
-    $sueldo_basico = floatval($_GET['sueldo_basico']);
+$nuevo_precio = $precio_gaseosa * 0.95;
 
-    $sueldo_final = 0.89 * ($sueldo_basico + 0.0075 * $total_vendido + 50 * $cant_hijos);
+$imp_compra = $cant_gaseosa * $nuevo_precio;
 
-    echo "El sueldo final es: " . number_format($sueldo_final, 2); // Mostrar el resultado con dos decimales
-}
+$imp_descuento = $imp_compra * 0.07;
 
+$imp_pagar = $imp_compra - $imp_descuento;
+
+$obsequio = 2 * $cant_gaseosa;
+
+echo "Nuevo precio: " . $nuevo_precio . "<br>";
+echo "Importe de compra: " . $imp_compra . "<br>";
+echo "Importe de descuento: " . $imp_descuento . "<br>";
+echo "Importe a pagar: " . $imp_pagar . "<br>";
+echo "Galletas de obsequio: " . $obsequio;
+?>

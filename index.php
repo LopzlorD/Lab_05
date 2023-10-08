@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calculadora de Sueldo</title>
+    <title>Calculadora de Gaseosas</title>
 </head>
 <body>
+    <h1>Calculadora de Gaseosas</h1>
     <form method="get" action="calculadora.php">
-        <label for="total_vendido">Total vendido:</label>
-        <input type="text" name="total_vendido" id="total_vendido" required>
+        Cantidad de gaseosas: <input type="text" name="cant_gaseosa">
         <br>
-        <label for="cant_hijos">Cantidad de hijos:</label>
-        <input type="text" name="cant_hijos" id="cant_hijos" required>
+        Precio de gaseosa: <input type="text" name="precio_gaseosa">
         <br>
-        <label for="sueldo_basico">Sueldo basico:</label>
-        <input type="text" name="sueldo_basico" id="sueldo_basico" required>
-        <br>
-        <input type="submit" value="Calcular Sueldo">
+        <input type="submit" value="Calcular">
     </form>
 </body>
 </html>
